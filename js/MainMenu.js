@@ -8,6 +8,8 @@ class MainMenu extends Phaser.Scene {
     }
 
     create() {
-        this.add.image(400, 300, 'play');
+        const play = this.add.image(400, 300, 'play');
+        play.setInteractive();
+        play.once('pointerup', () => this.scene.start('shooter'), this);
     }
 }
